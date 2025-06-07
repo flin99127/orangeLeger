@@ -1,1 +1,0 @@
-<h2>Bienvenue dans votre boutique</h2>

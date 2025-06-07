@@ -15,6 +15,7 @@ if(isset($_SESSION["role"]) && $_SESSION["role"] == "admin")
         {
             case "sup":
                 $unControleur->deleteClient($idclient);
+                echo "<script>alert(\"client supprimer ". $idclient ."\")</script>";
             break;
             case "edit":
                 $leClient = $unControleur->selectWhereClient($idclient);

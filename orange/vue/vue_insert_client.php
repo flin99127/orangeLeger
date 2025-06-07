@@ -20,12 +20,17 @@
         <tr>
             <td> </td>
             <td>
-                <input type="reset" name="Annuler" value="Annuler">
                 <input type="submit" <?= ($leClient!=null) ?' name="Modifier" value="Modifier" ' : ' 
-                name="Valider" value="Valider" ' ?> 
-                >
+                name="Valider" value="Valider" ' ?>>
+                <input type="reset" name="Annuler" onclick="annulerModification()" value="Annuler">
             </td>
         </tr>
         <?= ($leClient!=null) ? '<input type="hidden" name="idclient" value="'.$leClient['idclient'].'"> ': ''?>
     </table>
+    <script>
+        function annulerModification() 
+        {
+            window.location.href="index.php?page=2"
+        }
+    </script>
 </form>

@@ -15,14 +15,6 @@
         <td>Opérations</td>
     </tr>
 
-    <?php 
-    if(isset($_SESSION["role"]) && $_SESSION["role"] == "admin")
-    {
-        echo "<td>Opération</td>";
-    }
-
-    ?>
-
     <?php
     if(isset($lesClients))
     {

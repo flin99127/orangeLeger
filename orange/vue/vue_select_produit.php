@@ -12,7 +12,9 @@
         <td>Prix d'achat</td>
         <td>Date achat</td>
         <td>Catégorie</td>
-        <td>iD Client</td>
+        <td>Nom</td>
+        <td>Prénom</td>
+        <td>Opérations</td>
     </tr>
     <?php
     if(isset($lesProduits))
@@ -25,7 +27,13 @@
             echo "<td>". $unProduit['prixAchat']. "</td>";
             echo "<td>". $unProduit['dateAchat']. "</td>";
             echo "<td>". $unProduit['categorie']. "</td>";
-            echo "<td>". $unProduit['idclient']. "</td>";
+            echo "<td>". $unProduit['nom']. "</td>";
+            echo "<td>". $unProduit['prenom']. "</td>";
+            echo "<td>";
+            echo "<a href='index.php?page=3&action=edit&idproduit=".$unProduit['idproduit']."'><img src='image/editer.png' height='30' width='30'></a>";
+            echo "<a href='index.php?page=3&action=sup&idproduit=".$unProduit['idproduit']."'><img src='image/supprimer.png' height='30' width='30'></a>";
+            echo "</td>";
+            echo "</tr>";
         }
     }
     ?>

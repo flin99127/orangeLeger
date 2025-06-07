@@ -16,7 +16,7 @@ create table produit(
     designation varchar(50),
     prixAchat varchar(50),
     dateAchat date,
-    categorie enum ("Telephone", "Inscription", "Television"),
+    categorie text,
     idclient int(3) NOT null,
     primary key (idproduit),
     foreign key (idclient) references client(idclient)
@@ -58,3 +58,13 @@ insert into user values
     (null,"julien","corentin","b@gmail.com","456","user");
 
     update user set mdp = sha1(mdp);
+
+create or replace view  vinter AS
+select inter.idinter, inter.description , inter.prixInter, inter.dateInter, prod.designation, tech.idtechnicien, tech.nom, tech.prenom 
+from intervention inter join produit prod on inter.idproduit = prod.idproduit
+left join technicien tech on inter.idtechnicien = tech.idtechnicien;
+
+CREATE OR REPLACE VIEW vprod AS
+SELECT prod.idproduit, prod.designation, prod.prixAchat, prod.dateAchat, prod.categorie, cli.idclient, cli.nom, cli.prenom
+FROM produit prod JOIN client cli ON cli.idclient = prod.idclient;
+
